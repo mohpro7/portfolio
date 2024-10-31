@@ -1,21 +1,16 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import './Introduction.scss';
+import { MdOutlineArrowCircleDown } from "react-icons/md";
 
-const Introduction = () => {
-  return (
-    <motion.section
-      id="introduction"
-      className="introduction"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-    >
-      <h2>À propos de moi</h2>
-      <p>Développeur full stack passionné, spécialisé dans la création de solutions modernes et performantes.</p>
-    </motion.section>
-  );
-};
+
+const Introduction = () => (
+  <section id="introduction" className="introduction">
+    <h2>Besoin d'un Développeur<br /> Web ?</h2>
+    <hr className="custom-hr" />
+    <p>Développeur full stack en apprentissage, passionné par la technologie, 
+      avec de solides compétences de base et toujours à la recherche d'améliorations 
+      et d'apprentissage continu pour créer des solutions modernes.</p>
+      <MdOutlineArrowCircleDown color="#F04A4E" size={100} className='down-arrow'/>  
+  </section>
+);
 
 export default Introduction;

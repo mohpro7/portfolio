@@ -1,17 +1,32 @@
 .introduction {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
+  background-color: #232121; // Gris foncé pour tout le fond
+  color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   
-    h2 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 20px;
-    }
-  
-    p {
-      font-size: 1.2rem;
-      color: #666;
-    }
+  .custom-hr {
+    width: 80px;
+    border: none;
+    height: 2px;
+    background-color: #F04A4E;
   }
-  
+
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #cccccc;
+  }
+
+  .down-arrow {
+    margin-top: 100px;
+    margin: auto;
+  }
+}

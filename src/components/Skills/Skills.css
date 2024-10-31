@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600;700&display=swap');
+
+
+.skills-section {
+  margin-top: 80px;
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: xx-large;
+  color: black;
+}
+
+.skills-category {
+    margin-bottom: 50px;
+    margin-top: 0px;
+  }
+
+  
+  .skills-container {
+    display: flex; /* Cela aligne les éléments horizontalement */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+    gap: 100px; /* Espace entre les éléments */
+    align-items: center;
+  }
+  
+  .skill-item {
+    display: flex;
+    flex-direction: column; /* Pour garder l'icône au-dessus du cercle de progression */
+    align-items: center;
+    margin: 5px;
+    text-align: center;
+  }
+  
+  .circle-container {
+    width: 80px; /* Taille du cercle de progression */
+    height: 80px;
+    margin-bottom: -35px;
+    z-index: 2;
+  }
+  
+  .icon-container {
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: pulse 2s  ease-in-out 3;
+    z-index: 1;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  .icon-container:hover {
+    transform: scale(1.2); /* Grossissement de l'icône à 120% de sa taille originale */
+    filter: brightness(1.1) saturate(0.6);
+    box-shadow: 0px 0px 20px rgba(248, 248, 246, 0.957);
+    
+  }
+  
