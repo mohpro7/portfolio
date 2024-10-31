@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Introduction from './components/Introduction/Introduction';
 import Skills from './components/Skills/Skills';
 import '../src/components/Header/Header.scss';
+import Portfolio from './components/Projects/Portfolio'
 
 const App = () => {
   useEffect(() => {
@@ -38,6 +39,7 @@ const App = () => {
     <div className="app">
       <Header />
       <Introduction />
+      <Portfolio />
       <Skills />
     </div>
   );
