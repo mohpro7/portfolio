@@ -1,16 +1,18 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 40px 80px;
+  padding: 30px 80px;
   background-color: #232121;
-  color: #ffffff;
-  text-align: center;
   z-index: 10;
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between; // Aligne "mohmez" à gauche et les liens à droite
+    align-items: center; // Centrer les éléments verticalement
+    width: 100%; // Prendre toute la largeur disponible
+  }
 
   h1 {
     font-size: 1.5rem;
@@ -19,21 +21,24 @@
     transition: color 0.5s ease-in-out;
   }
 
-  nav {
+  nav { display: flex;
     margin-top: 10px;
 
     a {
       display: inline-block;
       color: rgba(255, 255, 255, 0.8);
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      transition: color 0.5s ease-in-out;
+      transition: color 0.5s ease-in-out, transform 0.3s ease;
 
       &:hover {
-        color: #ffffff;
+        color: #F04A4E;
         transform: scale(1.1);
+      }
+
+      &.active {
+        color: #F04A4E !important; // Change la couleur pour mettre en évidence la section active
+        transform: scale(1.2);
       }
     }
   }
@@ -41,14 +46,14 @@
   &.scrolled {
     background-color: #ffffff; // Remplace par une couleur de fond adaptée à la section suivante
     color: #000000; // Change la couleur globale des textes à une couleur plus sombre
-  
+
     h1 {
-      color: #F04A4E // Le titre prend une couleur contrastée (ex : blanc)
+      color: #F04A4E; // Le titre prend une couleur contrastée
     }
-  
+
     nav {
       a {
-        color:  #232121; // Change la couleur des liens de navigation
+        color: #232121; // Change la couleur des liens de navigation
         &:hover {
           color: #F04A4E; // Change la couleur au survol (si besoin)
         }
@@ -56,6 +61,3 @@
     }
   }
 }
-
-
-

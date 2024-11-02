@@ -1,0 +1,74 @@
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+  
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #232121;
+    }
+  
+    .contact-form {
+        max-width: 800px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      
+        .form-columns {
+          display: grid;
+          grid-template-columns: 1fr 1fr; // Deux colonnes de largeur égale
+          gap: 20px; // Espacement entre les colonnes
+      
+          .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; // Espacement entre les éléments de chaque colonne
+          }
+        }
+      
+        .form-group {
+          display: flex;
+          flex-direction: column; // Empile le label et le champ de saisie verticalement
+          gap: 10px; // Espace entre le label et le champ
+      
+          .form-icon {
+            color: #F04A4E;
+            margin-right: 10px;
+          }
+      
+          label {
+            color: #232121;
+            font-weight: bold; // Pour mieux différencier les labels des champs
+            text-align: left;  // Alignement à gauche du label
+          }
+      
+          input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%; // S'assure que l'input prenne toute la largeur disponible
+          }
+        }
+      
+        .contact-submit {
+          background-color: #F04A4E;
+          color: #fff;
+          padding: 15px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      
+          &:hover {
+            background-color: #d03a3a;
+          }
+        }
+
+        .required {
+            color: #F04A4E;
+      }
+    }
+}
+  

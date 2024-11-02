@@ -150,40 +150,42 @@ const Skills = () => {
   };
 
   return (
-    <section ref={skillsRef} className="skills-section">
-      {skills.map((category, categoryIndex) => (
-        <div key={categoryIndex} className="skills-category" data-aos="fade-up">
-          <h3>{category.category}</h3>
-          <div className="skills-container">
-            {category.list.map((skill, skillIndex) => (
-              <div
-                key={skillIndex}
-                className="skill-item"
-                onMouseEnter={() => handleMouseEnter(categoryIndex, skillIndex)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="circle-container">
-                  {hoveredSkill && hoveredSkill.category === categoryIndex && hoveredSkill.index === skillIndex && (
-                    <CircularProgressbar
-                      value={displayPercentage}
-                      text={`${displayPercentage}%`}
-                      styles={buildStyles({
-                        pathColor: getInterpolatedColor(displayPercentage),
-                        textColor: "#000",
-                        trailColor: "#d6d6d6",
-                      })}
-                    />
-                  )}
+    <section ref={skillsRef} className="skills-section" id='skills'>
+      <div className='content-wrapper'>
+        {skills.map((category, categoryIndex) => (
+          <div key={categoryIndex} className="skills-category" data-aos="fade-up">
+            <h3>{category.category}</h3>
+            <div className="skills-container">
+              {category.list.map((skill, skillIndex) => (
+                <div
+                  key={skillIndex}
+                  className="skill-item"
+                  onMouseEnter={() => handleMouseEnter(categoryIndex, skillIndex)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="circle-container">
+                    {hoveredSkill && hoveredSkill.category === categoryIndex && hoveredSkill.index === skillIndex && (
+                      <CircularProgressbar
+                        value={displayPercentage}
+                        text={`${displayPercentage}%`}
+                        styles={buildStyles({
+                          pathColor: getInterpolatedColor(displayPercentage),
+                          textColor: "#000",
+                          trailColor: "#d6d6d6",
+                        })}
+                      />
+                    )}
+                  </div>
+                  <div className="icon-container">
+                    {skill.icon}
+                    <p className="skill-name">{skill.name}</p>
+                  </div>
                 </div>
-                <div className="icon-container">
-                  {skill.icon}
-                  <p className="skill-name">{skill.name}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };

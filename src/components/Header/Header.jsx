@@ -1,15 +1,17 @@
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ activeSection }) => {
   return (
     <header className="header">
-      <h1>mohmez</h1>
-      <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#projects">Projets</a>
-        <a href="#skills">Compétences</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div className="content-wrapper">
+        <h1>mohmez</h1>
+        <nav>
+          <a href="#introduction" className={activeSection === 'introduction' ? 'active' : ''}>INTRODUCITON</a>
+          <a href="#portfolio" className={activeSection === 'portfolio' ? 'active' : ''}>PROJETS</a>
+          <a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>COMPETENCE</a>
+          <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>CONTACT</a>
+        </nav>
+      </div> 
     </header>
   );
 };

@@ -1,0 +1,34 @@
+/* global.scss */
+html {
+    scroll-behavior: smooth;
+  }
+
+/* Enlève toutes les marges par défaut */
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Décalage pour éviter que le header ne masque la section */
+  section {
+    scroll-margin-top: 80px;
+  }
+  
+  /* Assure que tout prend en compte le padding et border */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Ajustement du header */
+  .header {
+    width: 100vw;  /* Prend toute la largeur de l'écran */
+    padding: 20px 80px; /* Ajuste le padding au besoin */
+    box-sizing: border-box; /* Assure que le padding ne change pas la taille globale */
+  }
+
+  .content-wrapper {
+    max-width: 1200px; // Largeur maximale du contenu
+    margin: 0 auto; // Centre le contenu horizontalement
+    padding: 0 20px; // Espace sur les côtés
+  }
+  

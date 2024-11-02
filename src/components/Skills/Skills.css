@@ -20,6 +20,7 @@ h3 {
   
   .skills-container {
     display: flex; /* Cela aligne les éléments horizontalement */
+    justify-content: center;
     flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
     gap: 100px; /* Espace entre les éléments */
     align-items: center;
