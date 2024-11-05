@@ -7,7 +7,7 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaVuejs } from 'react-icon
 import { SiAsana, SiExpress, SiMongodb } from 'react-icons/si';
 import { DiVisualstudio, DiGithub } from 'react-icons/di';
 import PythonIcon from '../../assets/images/python-svg-1.png';
-import './Skills.css';
+import './Skills.scss';
 
 const Skills = () => {
   const skillsRef = useRef(null); // Référence pour la section des compétences

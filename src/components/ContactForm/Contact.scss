@@ -7,6 +7,10 @@
     font-size: 3rem;
     margin-bottom: 20px;
     color: #232121;
+
+    @media (max-width: 768px) {
+      font-size: 2rem; // Réduction de la taille du titre sur mobile
+    }
   }
 
   .contact-form {
@@ -16,6 +20,7 @@
     flex-direction: column;
     gap: 20px;
 
+    // Animation pour le formulaire quand il shake (vibre)
     &.shake {
       animation: shake 0.5s ease;
     }
@@ -38,10 +43,20 @@
       }
     }
 
+    // Structure en deux colonnes pour les écrans plus grands
     .form-columns {
       display: grid;
-      grid-template-columns: 1fr 1fr; // Deux colonnes égales
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
+
+      @media (max-width: 1024px) {
+        gap: 15px; // Réduire l'espace entre les colonnes pour les tablettes
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr; // Passer à une seule colonne sur mobile
+        gap: 20px; // Espacement entre les champs sur mobile
+      }
 
       .column {
         display: flex;
@@ -56,12 +71,20 @@
           .form-icon {
             color: #F04A4E;
             margin-bottom: 5px;
+
+            @media (max-width: 768px) {
+              margin-bottom: 3px; // Réduction de l'espacement sur mobile
+            }
           }
 
           label {
             color: #232121;
             font-weight: bold;
             text-align: left;
+
+            @media (max-width: 768px) {
+              font-size: 0.9rem; // Réduction de la taille des labels sur mobile
+            }
           }
 
           input,
@@ -70,10 +93,17 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 100%;
+
+            @media (max-width: 768px) {
+              padding: 8px; // Réduction du padding sur mobile
+            }
           }
 
           textarea {
             min-height: 230px; // Ajuste la hauteur du textarea pour correspondre aux autres inputs
+            @media (max-width: 768px) {
+              min-height: 150px; // Réduction de la hauteur du textarea sur mobile
+            }
           }
         }
       }
@@ -87,28 +117,47 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: #d03a3a;
       }
+
+      @media (max-width: 768px) {
+        padding: 10px 20px; // Réduire la taille du bouton sur mobile
+      }
     }
 
+    // Pour les champs obligatoires (étoile rouge)
     .required {
       color: #F04A4E;
+
+      @media (max-width: 768px) {
+        font-size: 0.8rem; // Réduction de la taille de l'étoile sur mobile
+      }
     }
 
+    // Message d'erreur sous les champs
     .error-message {
       color: #F04A4E;
       font-size: 0.9rem;
       margin-top: 5px;
+
+      @media (max-width: 768px) {
+        font-size: 0.8rem; // Réduction de la taille du texte d'erreur sur mobile
+      }
     }
 
+    // Message d'erreur global
     .form-error-message {
-      color: #F04A4E; 
+      color: #F04A4E;
       font-size: 1rem;
       margin-top: 10px;
       text-align: center;
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem; // Réduction de la taille du message d'erreur global sur mobile
+      }
     }
   }
 }

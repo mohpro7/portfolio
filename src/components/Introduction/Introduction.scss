@@ -6,7 +6,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
+
   .custom-hr {
     width: 80px;
     border: none;
@@ -28,5 +28,33 @@
   .down-arrow {
     margin-top: 100px;
     margin: auto;
+  }
+
+  // Media Queries pour rendre la section responsive
+  @media screen and (max-width: 1024px) {
+    // Pour les tablettes
+    h2 {
+      font-size: 3.5rem; // Taille du titre réduite pour les tablettes
+    }
+    p {
+      font-size: 1.1rem; // Réduire la taille du texte pour un meilleur confort de lecture
+    }
+    .down-arrow {
+      margin-top: 50px; // Moins d'espace en haut pour adapter la hauteur sur tablette
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    // Pour les smartphones
+    padding: 30px 15px; // Réduction de padding sur les petits écrans
+    h2 {
+      font-size: 2.5rem; // Taille du titre plus petite sur smartphone
+    }
+    p {
+      font-size: 1rem; // Texte plus petit sur smartphone
+    }
+    .down-arrow {
+      margin-top: 30px; // Réduction supplémentaire de l'espace au-dessus
+    }
   }
 }

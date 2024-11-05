@@ -2,16 +2,25 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 30px 80px;
+  padding: 20px 40px;
   background-color: #232121;
   z-index: 10;
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 
   .content-wrapper {
     display: flex;
-    justify-content: space-between; // Aligne "mohmez" à gauche et les liens à droite
-    align-items: center; // Centrer les éléments verticalement
-    width: 100%; // Prendre toute la largeur disponible
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   h1 {
@@ -19,15 +28,36 @@
     margin: 0;
     color: #ffffff;
     transition: color 0.5s ease-in-out;
+
+    @media (max-width: 1024px) {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
   }
 
-  nav { display: flex;
+  nav {
+    display: flex;
     margin-top: 10px;
+
+    @media (max-width: 1024px) {
+      flex-direction: row; // Restons en ligne, mais on réduit les marges
+      gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+      gap: 10px;
+    }
 
     a {
       display: inline-block;
       color: rgba(255, 255, 255, 0.8);
-      margin: 0 20px;
+      margin-left: 20px;
       text-decoration: none;
       transition: color 0.5s ease-in-out, transform 0.3s ease;
 
@@ -37,27 +67,50 @@
       }
 
       &.active {
-        color: #F04A4E !important; // Change la couleur pour mettre en évidence la section active
+        color: #F04A4E !important;
         transform: scale(1.2);
+      }
+
+      @media (max-width: 1024px) {
+        font-size: 1rem; // Réduction de la taille de la police pour les liens de navigation sous 1024px
+        margin-left: 15px; // Réduction de l'espacement entre les liens
+      }
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem; // Réduction de la taille de la police encore plus petite sur mobile
+        margin: 5px 0; // Espacement entre les liens en version mobile
       }
     }
   }
 
   &.scrolled {
-    background-color: #ffffff; // Remplace par une couleur de fond adaptée à la section suivante
-    color: #000000; // Change la couleur globale des textes à une couleur plus sombre
+    background-color: #ffffff;
+    color: #000000;
 
     h1 {
-      color: #F04A4E; // Le titre prend une couleur contrastée
+      color: #F04A4E;
     }
 
     nav {
       a {
-        color: #232121; // Change la couleur des liens de navigation
+        color: #232121;
+
         &:hover {
-          color: #F04A4E; // Change la couleur au survol (si besoin)
+          color: #F04A4E;
         }
       }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px 20px;
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
     }
   }
 }

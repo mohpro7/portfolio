@@ -41,7 +41,7 @@ const Contact = () => {
     }
 
     // Vérification de la longueur du message
-    if (message.length < 20) {
+    if (message.length < 5) {
       setFormError('Le message doit contenir au moins 5 caractères.');
       triggerShake(); // Déclenche l'animation de vibration
       return;

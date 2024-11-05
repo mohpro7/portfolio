@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600;700&display=swap');
+
+.skills-section {
+  margin-top: 80px;
+  padding: 0 20px; // Ajouter un padding latéral pour les petits écrans
+
+  @media (max-width: 1024px) {
+    margin-top: 60px; // Réduire l'espacement pour les tablettes
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 40px; // Réduire davantage sur les mobiles
+  }
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: xx-large;
+  color: black;
+
+  @media (max-width: 768px) {
+    font-size: large; // Réduire la taille des titres sur les petits écrans
+  }
+}
+
+.skills-category {
+  margin-bottom: 50px;
+  margin-top: 0;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 30px; // Réduire l'espacement entre les catégories pour les tablettes
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px; // Réduire encore sur les mobiles
+  }
+}
+
+.skills-container {
+  display: flex; /* Aligner les éléments horizontalement */
+  justify-content: center;
+  flex-wrap: wrap; /* Permettre aux éléments de passer à la ligne si nécessaire */
+  gap: 100px; /* Espace entre les éléments */
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    gap: 60px; // Réduire l'espacement entre les éléments sur les tablettes
+  }
+
+  @media (max-width: 768px) {
+    gap: 30px; // Réduire davantage sur les petits écrans
+    flex-direction: column; // Placer les éléments en colonne sur mobile pour une meilleure lisibilité
+  }
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column; /* Garder l'icône au-dessus du cercle de progression */
+  align-items: center;
+  margin: 5px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    margin: 10px 0; // Ajouter un peu d'espace entre les éléments sur mobile
+  }
+}
+
+.circle-container {
+  width: 80px; /* Taille du cercle de progression */
+  height: 80px;
+  margin-bottom: -35px;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 60px; // Réduire la taille du cercle sur mobile
+    height: 60px;
+    margin-bottom: -20px;
+  }
+}
+
+.icon-container {
+  margin-top: 10px;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: pulse 2s ease-in-out 3;
+  z-index: 1;
+
+  &:hover {
+    transform: scale(1.2); /* Grossissement de l'icône à 120% de sa taille originale */
+    filter: brightness(1.1) saturate(0.6);
+    box-shadow: 0px 0px 20px rgba(248, 248, 246, 0.957);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
