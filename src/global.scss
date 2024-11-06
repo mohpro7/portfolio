@@ -9,10 +9,6 @@ html, body {
     padding: 0;
   }
   
-  /* Décalage pour éviter que le header ne masque la section */
-  section {
-    scroll-margin-top: 80px;
-  }
   
   /* Assure que tout prend en compte le padding et border */
   * {

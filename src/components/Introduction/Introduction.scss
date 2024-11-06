@@ -3,26 +3,17 @@
   color: #ffffff;
   padding: 50px 20px;
   text-align: center;
-  min-height: 100vh;
+  min-height: 100vh; // Minimum pour occuper tout l'écran
+  height: 100vh; // Hauteur définie pour prendre exactement toute la hauteur
   display: flex;
   flex-direction: column;
+  justify-content: center; // Centrer le contenu verticalement
 
   .custom-hr {
     width: 80px;
     border: none;
     height: 2px;
     background-color: #F04A4E;
-  }
-
-  h2 {
-    font-size: 5rem;
-    margin-bottom: 20px;
-    color: #ffffff;
-  }
-
-  p {
-    font-size: 1.2rem;
-    color: #cccccc;
   }
 
   .down-arrow {
@@ -32,7 +23,6 @@
 
   // Media Queries pour rendre la section responsive
   @media screen and (max-width: 1024px) {
-    // Pour les tablettes
     h2 {
       font-size: 3.5rem; // Taille du titre réduite pour les tablettes
     }
@@ -45,7 +35,6 @@
   }
 
   @media screen and (max-width: 768px) {
-    // Pour les smartphones
     padding: 30px 15px; // Réduction de padding sur les petits écrans
     h2 {
       font-size: 2.5rem; // Taille du titre plus petite sur smartphone

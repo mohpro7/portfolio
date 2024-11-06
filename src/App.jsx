@@ -9,68 +9,82 @@ import './global.scss';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('');
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
+  // Partie 1 : Gestion du Header qui change de couleur lors du scroll
   useEffect(() => {
-    // Partie 1 : Gestion du Header qui change de couleur lors du scroll de 75% de la section Introduction
     const header = document.querySelector('.header');
     const introductionSection = document.getElementById('introduction');
+    let ticking = false;
 
     const handleScroll = () => {
-      if (!introductionSection) return;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (!introductionSection) return;
 
-      const sectionHeight = introductionSection.offsetHeight;
-      const sectionTop = introductionSection.offsetTop;
-      const scrollPosition = window.scrollY;
+          const sectionHeight = introductionSection.offsetHeight;
+          const sectionTop = introductionSection.offsetTop;
+          const scrollPosition = window.scrollY;
 
-      // Vérifie si 75% de la section est déjà cachée
-      if (scrollPosition >= sectionTop + sectionHeight * 0.75) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+          if (scrollPosition >= sectionTop + sectionHeight * 0.85) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Nettoyage de l'écouteur pour éviter les fuites de mémoire
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  // Partie 2 : Détection de la section active
   useEffect(() => {
-    // Partie 2 : Détection de la section active pour changer la couleur des liens de navigation
-    const sections = document.querySelectorAll('section');
-    const options = {
-      threshold: 0.4, // Détecte quand 60% de la section est visible
-    };
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      let currentSection = '';
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          currentSection = section.id;
         }
       });
-    }, options);
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
+      window.removeEventListener('scroll', handleScroll);
     };
+  }, []);
+
+  // Partie 3 : Charger progressivement les autres sections après un certain délai
+  useEffect(() => {
+    const timer = setTimeout(() => setIsInitialLoad(false), 1000); // Charger les autres sections après 1 seconde
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="app">
       <Header activeSection={activeSection} />
       <Introduction />
-      <Portfolio />
-      <Skills />
-      <Contact />
+      {!isInitialLoad && (
+        <>
+          <Portfolio />
+          <Skills />
+          <Contact />
+        </>
+      )}
     </div>
   );
 };

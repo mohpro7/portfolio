@@ -112,15 +112,17 @@
     .contact-submit {
       align-self: center;
       background-color: #F04A4E;
-      color: #fff;
+      color: black;
       padding: 15px 30px;
       border: none;
       border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       cursor: pointer;
       transition: background-color 0.3s ease;
 
       &:hover {
         background-color: #d03a3a;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
       }
 
       @media (max-width: 768px) {

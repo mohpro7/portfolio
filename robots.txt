@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://portfolio-eta-dun-60.vercel.app/

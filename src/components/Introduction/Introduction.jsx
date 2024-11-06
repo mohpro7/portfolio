@@ -1,6 +1,10 @@
+import React, { Suspense } from 'react';
 import './Introduction.scss';
-import { MdOutlineArrowCircleDown } from "react-icons/md";
 
+// Importer l'icône de manière lazy avec React.lazy()
+const MdOutlineArrowCircleDown = React.lazy(() =>
+  import('react-icons/md').then((module) => ({ default: module.MdOutlineArrowCircleDown }))
+);
 
 const Introduction = () => (
   <section id="introduction" className="introduction">
@@ -10,7 +14,13 @@ const Introduction = () => (
       <p>Développeur full stack en apprentissage, passionné par la technologie, 
         avec de solides compétences de base et toujours à la recherche d'améliorations 
         et d'apprentissage continu pour créer des solutions modernes.</p>
-        <a href="#portfolio"><MdOutlineArrowCircleDown color="#F04A4E" size={100} className='down-arrow'/ > </a> 
+
+      {/* Utilisation de Suspense pour charger l'icône */}
+      <a href="#portfolio">
+        <Suspense fallback={<div>Chargement...</div>}>
+          <MdOutlineArrowCircleDown color="#F04A4E" size={100} className="down-arrow" aria-label="Aller au portfolio"/>
+        </Suspense>
+      </a>
     </div>
   </section>
 );
