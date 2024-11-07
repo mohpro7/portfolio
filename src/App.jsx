@@ -6,7 +6,7 @@ import Introduction from './components/Introduction/Introduction';
 import Portfolio from './components/Projects/Portfolio';
 import Skills from './components/Skills/Skills';
 import Contact from './components/ContactForm/Contact';
-import Footer from './components/Footer/Footer';
+import Footer from './components/footer/Footer';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('');
