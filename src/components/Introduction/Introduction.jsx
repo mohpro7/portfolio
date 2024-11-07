@@ -16,9 +16,9 @@ const Introduction = () => (
         et d'apprentissage continu pour créer des solutions modernes.</p>
 
       {/* Utilisation de Suspense pour charger l'icône */}
-      <a href="#portfolio">
+      <a href="#portfolio" aria-label="Aller au portfolio">
         <Suspense fallback={<div>Chargement...</div>}>
-          <MdOutlineArrowCircleDown color="#F04A4E" size={100} className="down-arrow" aria-label="Aller au portfolio"/>
+          <MdOutlineArrowCircleDown color="#F04A4E" size={100} className="down-arrow" />
         </Suspense>
       </a>
     </div>

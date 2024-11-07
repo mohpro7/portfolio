@@ -1,0 +1,44 @@
+.footer {
+    background-color: #232121; // Couleur de fond du footer
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+  
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px; // Largeur maximale pour centrer le contenu
+      margin: 0 auto; // Centre le contenu
+      flex-wrap: wrap;
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 15px; // Ajoute de l'espace entre les éléments sur les petits écrans
+      }
+    }
+  
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  
+    .linkedin-link {
+      color: #0e76a8; // Couleur de LinkedIn
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: #065A82; // Couleur au survol
+      }
+  
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+  

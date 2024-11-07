@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Header from './components/Header/Header';
-import Introduction from './components/Introduction/Introduction';
-import Skills from './components/Skills/Skills';
-import Portfolio from './components/Projects/Portfolio';
-import '../src/components/Header/Header.scss';
-import Contact from './components/ContactForm/Contact';
 import './global.scss';
+import Header from './components/Header/Header';
+import '../src/components/Header/Header.scss';
+import Introduction from './components/Introduction/Introduction';
+import Portfolio from './components/Projects/Portfolio';
+import Skills from './components/Skills/Skills';
+import Contact from './components/ContactForm/Contact';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -85,6 +86,7 @@ const App = () => {
           <Contact />
         </>
       )}
+      <Footer />
     </div>
   );
 };
