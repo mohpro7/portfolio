@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PythonIcon from '../../assets/images/python-svg-1.png';
 import './Skills.scss';
+import Sass from '../../assets/images/sass.ico';
 
 // Lazy loading des icônes
 const FaHtml5 = React.lazy(() => import('react-icons/fa').then(module => ({ default: module.FaHtml5 })));
@@ -15,8 +16,8 @@ const FaNodeJs = React.lazy(() => import('react-icons/fa').then(module => ({ def
 const SiAsana = React.lazy(() => import('react-icons/si').then(module => ({ default: module.SiAsana })));
 const SiExpress = React.lazy(() => import('react-icons/si').then(module => ({ default: module.SiExpress })));
 const SiMongodb = React.lazy(() => import('react-icons/si').then(module => ({ default: module.SiMongodb })));
-const DiVisualstudio = React.lazy(() => import('react-icons/di').then(module => ({ default: module.DiVisualstudio })));
 const DiGithub = React.lazy(() => import('react-icons/di').then(module => ({ default: module.DiGithub })));
+
 
 const Skills = () => {
   const skillsRef = useRef(null); // Référence pour la section des compétences
@@ -93,20 +94,16 @@ const Skills = () => {
           icon: <SiExpress size={130} color="#68a063" />,
         },
         {
-          name: "MongoDB",
-          percentage: 30,
-          icon: <SiMongodb size={130} color="#4DB33D" />,
+          name: "Scss",
+          percentage: 60,
+          icon: <img src={Sass} alt="Scss Icon" width={130} height={130} loading="lazy" />,
         },
+
       ],
     },
     {
       category: "Divers",
       list: [
-        {
-          name: "VS Code",
-          percentage: 80,
-          icon: <DiVisualstudio size={130} color="#0078d7" />,
-        },
         {
           name: "GitHub",
           percentage: 50,
@@ -121,6 +118,11 @@ const Skills = () => {
           name: "Node.js",
           percentage: 50,
           icon: <FaNodeJs size={130} color="#273346" />,
+        },
+        {
+          name: "MongoDB",
+          percentage: 30,
+          icon: <SiMongodb size={130} color="#4DB33D" />,
         },
       ],
     },
