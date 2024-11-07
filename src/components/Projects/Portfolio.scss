@@ -91,13 +91,13 @@
     }
 
     @media (max-width: 1024px) {
-      width: 400px; // Réduire la taille des cartes sur les tablettes
-      height: 250px; 
+      width: 80%; // Réduire la taille des cartes sur les tablettes
+      height: 300px; 
     }
 
     @media (max-width: 768px) {
-      width: 100%; // Prendre toute la largeur de l'écran sur les mobiles
-      height: 200px; // Adapter la hauteur
+      width: 90%; // Prendre toute la largeur de l'écran sur les mobiles
+      height: 350px; // Adapter la hauteur
     }
   }
 
