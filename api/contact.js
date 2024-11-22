@@ -1,4 +1,4 @@
-const connectDB = require('../config/db');
+const connectDB = require('./config/db');
 const Contact = require('../models/Contact');
 const validateContact = require('../middlewares/validateContact');
 
