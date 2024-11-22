@@ -7,9 +7,11 @@ const rateLimiter = require('./middlewares/rateLimiter');
 const app = express();
 
 // Middleware pour traiter les JSON
-app.use(express.json());
+
 
 connectDB(); // Connecter à MongoDB
+
+app.use(express.json());
 
 module.exports = async (req, res) => {
   if (req.method === 'POST') {
