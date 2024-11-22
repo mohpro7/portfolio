@@ -1,6 +1,8 @@
 const connectDB = require('./config/db');
-const Contact = require('../models/Contact');
-const validateContact = require('../middlewares/validateContact');
+const Contact = require('./models/Contact');
+const validateContact = require('./middlewares/validateContact');
+const rateLimiter = require('./middlewares/rateLimiter');
+
 
 connectDB(); // Connecter à MongoDB
 
@@ -12,6 +14,17 @@ module.exports = async (req, res) => {
       if (validationError) {
         return res.status(400).json({ error: validationError });
       }
+
+      router.post('/', rateLimiter, validateContact, async (req, res) => {
+        try {
+          const newContact = new Contact(req.body);
+          await newContact.save();
+          res.status(201).json({ message: 'Contact enregistré avec succès' });
+        } catch (error) {
+          console.error('Erreur lors de l\'enregistrement du contact :', error);
+          res.status(500).json({ error: 'Erreur lors de l\'enregistrement du contact' });
+        }
+      });
 
       // Enregistrement dans la base de données
       const { name, email, message } = req.body;
