@@ -7,12 +7,13 @@ const contactSchemaValidation = Joi.object({
   message: Joi.string().min(5).max(500).required(),
 });
 
-const validateContact = (req, res, next) => {
+// Fonction de validation
+const validateContact = (req) => {
   const { error } = contactSchemaValidation.validate(req.body);
   if (error) {
-    return res.status(400).json({ error: error.details[0].message });
+    return error.details[0].message; // Retourne le message d'erreur si la validation échoue
   }
-  next();
+  return null; // Retourne null si tout est valide
 };
 
 module.exports = validateContact;
