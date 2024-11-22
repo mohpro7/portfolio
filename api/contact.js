@@ -1,8 +1,13 @@
+const express = require('express');
 const connectDB = require('./config/db');
 const Contact = require('./models/Contact');
 const validateContact = require('./middlewares/validateContact');
 const rateLimiter = require('./middlewares/rateLimiter');
 
+const app = express();
+
+// Middleware pour traiter les JSON
+app.use(express.json());
 
 connectDB(); // Connecter à MongoDB
 
